@@ -1,0 +1,227 @@
+@font-face {
+  font-family: 'SpicySale';
+  src: url('/spicy-sale/Spicy Sale.ttf') format('truetype');
+}
+
+.frontpage {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-container {
+  position: absolute;
+  top: 2%;
+  left: 60px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  pointer-events: none;
+}
+
+.name {
+  color: #ffffff;
+  font-size: 190px;
+  margin: 0;
+  font-family: 'SpicySale', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 50px;
+  font-family: 'SpicySale', sans-serif;
+  letter-spacing: 4px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.instruction-container {
+  position: absolute;
+  bottom: 40%;
+  left: 50px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.instruction-text {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 50px;
+  margin: 0;
+  font-family: 'SpicySale', sans-serif;
+  letter-spacing: 2px;
+  animation: fadeInOut 3s ease-in-out infinite;
+}
+
+.three-d-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 100vh;
+}
+
+@keyframes fadeInOut {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Tablet and smaller desktop screens */
+@media (max-width: 1024px) {
+  .name {
+    font-size: 100px;
+  }
+
+  .title {
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+
+  .instruction-text {
+    font-size: 40px;
+  }
+
+  .header-container {
+    left: 40px;
+  }
+
+  .instruction-container {
+    left: 40px;
+    bottom: 35%;
+  }
+
+  .three-d-container {
+    width: 70%;
+  }
+}
+
+/* Tablets and large phones */
+@media (max-width: 768px) {
+  .name {
+    font-size: 90px;
+  }
+
+  .title {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .instruction-text {
+    font-size: 28px;
+  }
+
+  .header-container {
+    left: 30px;
+    top: 3%;
+  }
+
+  .instruction-container {
+    left: 30px;
+    bottom: 30%;
+  }
+
+  .three-d-container {
+    width: 65%;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .frontpage {
+    flex-direction: column;
+  }
+
+  .name {
+    font-size: 50px;
+    letter-spacing: 1px;
+  }
+
+  .title {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+
+  .instruction-text {
+    font-size: 18px;
+  }
+
+  .header-container {
+    left: 20px;
+    top: 5%;
+  }
+
+  .instruction-container {
+    left: 20px;
+    bottom: 25%;
+  }
+
+  .three-d-container {
+    width: 100%;
+    height: 60vh;
+    bottom: 0;
+    top: auto;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 375px) {
+  .name {
+    font-size: 40px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .instruction-text {
+    font-size: 16px;
+  }
+
+  .header-container {
+    left: 15px;
+  }
+
+  .instruction-container {
+    left: 15px;
+    bottom: 22%;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .name {
+    font-size: 40px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .instruction-text {
+    font-size: 16px;
+  }
+
+  .header-container {
+    top: 2%;
+    left: 20px;
+  }
+
+  .instruction-container {
+    bottom: 15%;
+    left: 20px;
+  }
+
+  .three-d-container {
+    width: 55%;
+  }
+}
