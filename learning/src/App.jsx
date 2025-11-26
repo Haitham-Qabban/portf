@@ -2,6 +2,7 @@ import './App.css';
 import Spline from '@splinetool/react-spline';
 import { Routes, Route } from 'react-router-dom';
 import Projects from './Projects';
+import Skills from './Skills';
 
 function Title() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<FrontPage />} />
       <Route path="/projects" element={<Projects />} />
+      <Route path="/skills" element={<Skills />} />
     </Routes>
   );
 }

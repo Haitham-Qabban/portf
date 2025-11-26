@@ -1,0 +1,22 @@
+.skills { 
+  padding: 20px; 
+  color: aqua;
+}
+
+.skill-logo { 
+  max-width: 10rem;  // or use rem: 5rem (80px = 5rem if base is 16px)
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) drop-shadow(0 6px 20px rgba(0, 0, 0, 0.2));
+  cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+
+}
+.skill-logo:hover {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) drop-shadow(0 6px 20px rgba(0, 0, 0, 0.2));
+  transform: scale(1.05);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
