@@ -1,0 +1,215 @@
+
+.contact {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	/* Theme tokens */
+	--bg: #F9F9F9;
+	--bg-muted: #EEE;
+	--ink: #333;
+	--accent: #2e3696;
+	--ink-muted: #999;
+	--paper-shadow: 0 12px 40px rgba(0,0,0,0.16);
+	--edge-shadow: 0 4px 16px rgba(0,0,0,0.14);
+	--transition-fast: 200ms;
+	--transition-med: 300ms;
+
+	/* Layout safeguard for smaller viewports */
+	max-width: min(100vw, 744px);
+	padding: 16px;
+
+
+	.envelope {
+		position: absolute;
+		height: 420px;
+		width: 744px;
+		left: 50%;
+		margin-left: -372px;
+		top: 50%;
+		margin-top: -90px;
+		background: var(--bg);
+		transition-delay: 150ms;
+		box-shadow: var(--edge-shadow);
+		border-radius: 10px;
+		outline: 1px solid #e6e6e6;
+		backdrop-filter: saturate(1.1);
+
+		.top {
+			position: absolute;
+			top: -270px;
+			left: 0;
+			width: 100%;
+			height: 46px;
+			z-index: 30;
+			overflow: hidden;
+			transform-origin: top;
+			transform: rotateX(180deg);
+			transition: transform var(--transition-med) 0ms, height var(--transition-med) 150ms, top var(--transition-med) 150ms;
+		}
+
+		.outer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			border-left: 372px solid transparent;
+			border-right: 372px solid transparent;
+			border-top: 316px solid var(--bg-muted);
+
+			.inner {
+				position: absolute;
+				left: -364px;
+				top: -330px;
+				border-left: 364px solid transparent;
+				border-right: 364px solid transparent;
+				border-top: 306px solid var(--ink);
+			}
+		}
+
+		.bottom {
+			position: absolute;
+			z-index: 20;
+			bottom: 0;
+			left: 10px;
+			border-left: 366px solid transparent;
+			border-right: 366px solid transparent;
+			border-bottom: 204px solid var(--ink);
+		}
+
+		.left {
+			position: absolute;
+			z-index: 20;
+			top: 0;
+			left: 0;
+			border-left: 366px solid var(--ink);
+			border-top: 204px solid transparent;
+			border-bottom: 204px solid transparent;
+		}
+
+		.right {
+			position: absolute;
+			z-index: 20;
+			top: 0;
+			right: 0;
+			border-right: 366px solid var(--ink);
+			border-top: 204px solid transparent;
+			border-bottom: 204px solid transparent;
+		}
+
+		.cover {
+			position: absolute;
+			z-index: 15;
+			bottom: 0;
+			left: 0;
+			height: 55%;
+			width: 100%;
+			background: var(--bg-muted);
+		}
+
+		.paper {
+			position: absolute;
+			height: 376px;
+			padding: 46px 40px;
+			width: 100%;
+			top: 0;
+			left: 0;
+			background: var(--bg);
+			z-index: 10;
+			margin-top: -270px;
+			transition: margin-top var(--transition-med) 150ms;
+			box-shadow: var(--paper-shadow);
+			border-radius: 12px 12px 0 0;
+			box-sizing: border-box;
+
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				width: 100%;
+				max-width: 640px;
+				margin: 0 auto;
+
+				input, textarea {
+					width: 100%;
+					padding: 15px;
+					font-size: clamp(18px, 2.2vw, 24px);
+					border: 2px solid var(--ink);
+					border-radius: 5px;
+					background: #FFF;
+					box-sizing: border-box;
+					font-family: inherit;
+					box-shadow: inset 0 1px 0 rgba(0,0,0,0.04);
+
+					&:focus {
+						outline: none;
+						border-color: var(--accent);
+						box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+					}
+
+					&::placeholder {
+						color: var(--ink-muted);
+					}
+				}
+
+				textarea {
+					min-height: 120px;
+					resize: vertical;
+				}
+
+				button {
+					padding: 15px 30px;
+					font-size: clamp(20px, 2.6vw, 28px);
+					font-weight: bold;
+					background: var(--ink);
+					color: #FFF;
+					border: none;
+					border-radius: 5px;
+					cursor: pointer;
+					box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+				}
+
+				p {
+					text-align: center;
+					font-size: clamp(18px, 2.2vw, 24px);
+					color: var(--accent);
+					font-weight: bold;
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&.submitted {
+		.envelope {
+			margin-top: -90px;
+			transition: margin-top var(--transition-med);
+
+			.top {
+				transition: transform var(--transition-med) 150ms, z-index 0ms 150ms, height var(--transition-med) 0ms, top var(--transition-med) 0ms;
+				height: 330px;
+				top: -16px;
+				transform: rotateX(0deg);
+			}
+
+			.paper {
+				margin-top: 0;
+				transition: margin-top var(--transition-med) 0ms;
+			}
+		}
+	}
+
+	/* Responsiveness */
+	@media (max-width: 820px) {
+		.envelope {
+			width: 100%;
+			left: 50%;
+			margin-left: -50%;
+		}
+	}
+
+	/* Reduced motion preference */
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after { transition: none !important; }
+	}
+}
