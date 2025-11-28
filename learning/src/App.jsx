@@ -3,6 +3,8 @@ import Spline from '@splinetool/react-spline';
 import { Routes, Route } from 'react-router-dom';
 import Projects from './Projects';
 import Skills from './Skills';
+import Me from './Me';
+import Contacts from './Contacts';
 
 function Title() {
   return (
@@ -27,7 +29,7 @@ function FrontPage() {
       <Title />
       <Instruction />
       <div className="three-d-container">
-        <Spline scene="/scene (3).splinecode" />
+        <Spline scene="/scene (1).splinecode" />
       </div>
     </div>
   );
@@ -39,6 +41,8 @@ export default function App() {
       <Route path="/" element={<FrontPage />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/skills" element={<Skills />} />
+      <Route path="/contacts" element={<Contacts />} />
+      <Route path="/me" element={<Me />} />
     </Routes>
   );
 }
