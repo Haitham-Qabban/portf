@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Projects from './Projects';
 import Skills from './Skills';
 import Me from './Me';
+import { Application } from '@splinetool/runtime';
+
 import Contacts from './Contacts';
 
 function Title() {
@@ -16,7 +18,7 @@ function Title() {
 }
 
 function Instruction() {
-  return (
+  return (     
     <div className="instruction-container">
       <p className="instruction-text">Click a key to navigate →</p>
     </div>
@@ -28,8 +30,21 @@ function FrontPage() {
     <div className="frontpage">
       <Title />
       <Instruction />
-      <div className="three-d-container">
-        <Spline scene="/scene (1).splinecode" />
+      <div className="three-d-container">        
+        <Spline 
+          scene="https://prod.spline.design/wxSqik7SIoBvwaC0/scene.splinecode"
+          onLoad={(spline) => {
+            const obj = spline.findObjectByName('Key Send');
+            console.log(obj)
+            spline.addEventListener('mouseDown', (e) => {
+              console.log('Clicked object:', e.target.name);
+              if (e.target.name === 'Key Send') {
+                window.location.href = '/projects'
+                console.log("Navigating to Projects");
+              }
+            });
+          }}
+        />
       </div>
     </div>
   );

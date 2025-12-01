@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'SpicySale';
-  src: url('/spicy-sale/Spicy Sale.ttf') format('truetype');
+  font-family: 'StreetSlab';
+  src: url('/street-slab/Street Slab.otf') format('opentype');
 }
 
 .frontpage {
@@ -25,7 +25,7 @@
   color: #000000;
   font-size: 190px;
   margin: 0;
-  font-family: 'SpicySale', sans-serif;
+  font-family: 'StreetSlab', sans-serif;
   letter-spacing: 2px;
   line-height: 1;
 }
@@ -33,7 +33,7 @@
 .title {
   color: #000000;
   font-size: 50px;
-  font-family: 'SpicySale', sans-serif;
+  font-family: 'StreetSlab', sans-serif;
   letter-spacing: 4px;
   line-height: 1.2;
   margin: 0;
@@ -51,7 +51,7 @@
   color: rgba(78, 78, 78, 0.5);
   font-size: 50px;
   margin: 0;
-  font-family: 'SpicySale', sans-serif;
+  font-family: 'StreetSlab', sans-serif;
   letter-spacing: 2px;
   animation: fadeInOut 3s ease-in-out infinite;
 }
