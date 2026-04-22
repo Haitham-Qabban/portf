@@ -1,9 +1,12 @@
 
 .contact {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Rigolo', sans-serif;
 
 	/* Theme tokens */
 	--bg: #F9F9F9;
@@ -19,10 +22,12 @@
 	/* Layout safeguard for smaller viewports */
 	max-width: min(100vw, 744px);
 	padding: 16px;
+	margin: 0 auto;
+	
 
 
 	.envelope {
-		position: absolute;
+		position: relative;
 		height: 420px;
 		width: 744px;
 		left: 50%;

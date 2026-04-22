@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';  
 import './Skills.scss';
-export default function Skills() {
+ export default function Skills() {
   const [skillValue, setSkillValue] = useState(0);
   
   return (
