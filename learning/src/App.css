@@ -1,12 +1,8 @@
-@font-face {
-  font-family: 'papyrus';
-}
-
 .frontpage {
-  width: 100vw  ;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
-    
+  background: #ffffff;
 }
 
 .header-container {
@@ -22,90 +18,114 @@
 
 .name {
   color: #000000;
-  font-size: 150px;
+  font-size: clamp(48px, 9vw, 150px);
   margin: 0;
   letter-spacing: 2px;
   line-height: 1;
+  font-weight: 900;
 }
 
 .title {
   color: #000000;
-  font-size: 50px;
+  font-size: clamp(16px, 2.8vw, 48px);
   letter-spacing: 4px;
   line-height: 1.2;
   margin: 0;
-}
-
-.instruction-container {
-  position: relative;
-  top: 70%;
-  left: 50px;
-  pointer-events: none;
+  font-weight: 400;
 }
 
 .instruction-text {
-  color: #000000;
-  font-size: 50px;
-  margin: 0;
-  letter-spacing: 2px;
+  color: #555555;
+  font-size: clamp(12px, 1.2vw, 20px);
+  margin: 10px 0 0 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Key legend at the bottom */
+.key-legend {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.key-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.key-cap {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  min-width: 36px;
+  text-align: center;
+  font-family: monospace;
+}
+
+.key-label {
+  font-size: 9px;
+  color: #444;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .three-d-container {
   position: fixed;
   top: 0;
-  background-color: #7a6868;
   right: 0;
   width: 100vw;
-  height: 100vh;  
+  height: 100vh;
+  background-color: #ffffff;
   transform: scale(0.70);
-
+  transform-origin: center center;
 }
 
-@keyframes fadeInOut {
-
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
 @media (max-width: 768px) {
-  .frontpage {
-    width: 100vw;
+  .header-container {
+    top: 4%;
+    left: 20px;
   }
 
   .three-d-container {
     left: 0;
     width: 100vw;
-    height: 50vh;
-    top: 50vh;
+    height: 55vh;
+    top: 45vh;
+    transform: none;
   }
 
-  .header-container {
-    top: 5%;
-    left: 20px;
+  .key-legend {
+    bottom: 58vh;
+    gap: 8px;
   }
 
-  .name {
-    font-size: 100px;
+  .key-cap {
+    font-size: 8px;
+    padding: 3px 6px;
   }
 
-  .title {
-    font-size: 25px;
-  }
-
-  .instruction-container {
-    top: 80%;
-    left: 20px;
-  }
-
-  .instruction-text {
-    font-size: 25px;
+  .key-label {
+    font-size: 7px;
   }
 }
-
-
-

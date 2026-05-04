@@ -1,13 +1,19 @@
 
 import React, { useState } from 'react';  
+import { useNavigate } from 'react-router-dom';
 import './Skills.scss';
- export default function Skills() {
+
+export default function Skills() {
   const [skillValue, setSkillValue] = useState(0);
+  const navigate = useNavigate();
   
   return (
     <>
-      <div className="skills">
-        <p>Skills</p>
+      <div className="skills-page-header">
+        <button className="skills-back-btn" onClick={() => navigate('/')}>← HOME</button>
+        <div className="skills">
+          <p>SKILLS</p>
+        </div>
       </div>
       <Skillbar skillValue={skillValue} />
       <SkillLogos setSkillValue={setSkillValue} />

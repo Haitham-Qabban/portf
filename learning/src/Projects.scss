@@ -1,0 +1,127 @@
+.projects-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #000;
+  font-family: sans-serif;
+}
+
+.projects-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 4rem;
+  border-bottom: 2px solid #000;
+}
+
+.projects-back-btn {
+  background: none;
+  border: 2px solid #000;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
+
+.projects-page-title {
+  font-size: clamp(1.4rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0;
+  border-left: 2px solid #000;
+}
+
+.project-card {
+  padding: 2.5rem 2rem;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #fff;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+
+    .tag {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .card-link {
+      color: #fff;
+    }
+  }
+}
+
+.card-title {
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.6rem;
+  border: 1.5px solid #000;
+  border-radius: 3px;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.card-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-header {
+    padding: 1.25rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
